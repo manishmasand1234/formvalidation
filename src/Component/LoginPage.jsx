@@ -6,6 +6,9 @@ import toast, {Toaster} from 'react-hot-toast';
 
 export default function LoginPage() {
 
+  const [showdata , setShowData] = useState(false)
+  const [submittedData, setSubmittedData] = useState(null);
+
   const [name,setName]=useState("");
   const [email, setEmail] = useState('');
   const [phone , setPhone] = useState("");
@@ -24,27 +27,30 @@ export default function LoginPage() {
   }
 
 
-   let handlesubmit=(event)=>{
-
+  let handlesubmit = (event) => {
     event.preventDefault();
-
-    if(pass==conf){
-    console.log('username is  ',name)
-    console.log('email is  ' ,email)
-    console.log('phone is  ' , phone)
-    console.log('password is  ' , pass)
-    event.preventDefault();
-    setName('')
-    setEmail('')
-    setPass('')
-    setConf('')
-    setPhone('')
-    toast.success("Data saved sucessfully")
+  
+    if (pass === conf) {
+      setSubmittedData({
+        name,
+        email,
+        phone,
+        pass,
+      });
+  
+      setName('');
+      setEmail('');
+      setPass('');
+      setConf('');
+      setPhone('');
+  
+      toast.success('Data saved successfully');
+      setShowData(true);
+    } else {
+      toast.error('Password and confirm password must be the same');
     }
-    if(pass!=conf){
-      toast.error("Password and confirm  password must be same")
-    }
-   }
+  };
+  
  
   return (
     <div>
@@ -93,6 +99,20 @@ export default function LoginPage() {
         <button className='increment' onClick={increment}>Increment</button>
         <button className='decrement' onClick={decrement}>Decrement</button>
       </div>
+
+      <hr />
+      <hr />
+      
+      {showdata && submittedData && (
+            <div>
+              <div>Name you have entered is {submittedData.name}</div>
+              <div>Email you have entered is {submittedData.email}</div>
+              <div>Phone number you have entered is {submittedData.phone}</div>
+              <div>Password you have entered is {"*".repeat(submittedData.pass.length)}</div>
+            </div>
+          )}
+      
+      
 
 
     </div>
