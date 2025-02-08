@@ -1,0 +1,120 @@
+body{
+  background-color: rgb(145, 187, 223);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+label{
+  display: inline-block;
+  width: 10rem;
+  padding: 1rem 2rem;
+  vertical-align: center;
+  text-align: right;
+}
+
+input{
+  padding: 0.5rem 0.5rem;
+}
+
+.button{
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+button{
+  padding: 0.5rem 1rem;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0.5rem 0.5rem 0.5rem black;
+  margin-bottom: 2rem;
+
+}
+
+button:hover{
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.increment{
+  background-color: green;
+  margin: 1rem;
+}
+
+.decrement{
+  background-color: red;
+}
+
+.eyebutton{
+  cursor: pointer;
+  position: absolute;
+  transform: translate(-1.2rem, 1.2rem);
+  color: blue;
+}
+
+@media screen and (max-width: 768px) {
+  .eyebutton {
+    font-size: 1.2rem;
+    right: 5.3rem;
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .eyebutton {
+    font-size: 1rem; 
+    right: 5px; 
+    transform: translate(-4.6rem,0.7rem);
+  }
+
+  label{
+    display: flex;
+    width: auto;
+    text-align: left;
+    padding: 5%;
+  }
+}
+
+
+
+
+@media screen and (max-width: 375px) {
+  .eyebutton {
+    font-size: 1rem; 
+    right: 5px; 
+    transform: translate(-3.4rem,0.7rem);
+  }
+
+  label{
+    display: flex;
+    width: auto;
+    text-align: left;
+    padding: 5%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .eyebutton {
+    font-size: 1rem; 
+    right: 5px; 
+    transform: translate(-2.3rem,0.7rem);
+  }
+
+  label{
+    display: flex;
+    width: auto;
+    text-align: left;
+    padding: 5%;
+  }
+}
+
+
+
+
